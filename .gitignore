@@ -1,0 +1,5 @@
+.clangd
+.DS_Store
+build/
+docs/html
+.vscode/

@@ -1,0 +1,76 @@
+# Doxygen configuration for Lab05 / task_1.
+# Only non-default options are listed. Generate with: doxygen Doxyfile
+
+#---------------------------------------------------------------------------
+# Project
+#---------------------------------------------------------------------------
+PROJECT_NAME           = "Lab05 Task 1"
+PROJECT_BRIEF          = "LCD menu with rotary encoder and RGB LED control for Arduino Uno"
+PROJECT_NUMBER         = 1.0
+OUTPUT_DIRECTORY       = docs
+CREATE_SUBDIRS         = NO
+
+#---------------------------------------------------------------------------
+# Input
+#---------------------------------------------------------------------------
+INPUT                  = README.md \
+                         task_1.ino \
+                         include
+FILE_PATTERNS          = *.ino *.hpp *.h *.md
+RECURSIVE              = YES
+EXCLUDE                = docs build
+USE_MDFILE_AS_MAINPAGE = README.md
+EXTENSION_MAPPING      = ino=C++
+INPUT_ENCODING         = UTF-8
+
+#---------------------------------------------------------------------------
+# Extraction
+#---------------------------------------------------------------------------
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+EXTRACT_LOCAL_CLASSES  = YES
+HIDE_UNDOC_MEMBERS     = NO
+SORT_MEMBER_DOCS       = NO
+JAVADOC_AUTOBRIEF      = NO
+MARKDOWN_SUPPORT       = YES
+MARKDOWN_ID_STYLE      = GITHUB
+BUILTIN_STL_SUPPORT    = YES
+
+#---------------------------------------------------------------------------
+# Source browsing
+#---------------------------------------------------------------------------
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = NO
+STRIP_CODE_COMMENTS    = NO
+REFERENCED_BY_RELATION = YES
+REFERENCES_RELATION    = YES
+
+#---------------------------------------------------------------------------
+# Preprocessor (Arduino / AVR specific macros)
+#---------------------------------------------------------------------------
+ENABLE_PREPROCESSING   = YES
+MACRO_EXPANSION        = YES
+EXPAND_ONLY_PREDEF     = YES
+SEARCH_INCLUDES        = NO
+PREDEFINED             = "ISR(vector)=void vector()" \
+                         ARDUINO_AVR_UNO \
+                         __AVR_ATmega328P__
+
+#---------------------------------------------------------------------------
+# Warnings
+#---------------------------------------------------------------------------
+QUIET                  = YES
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = YES
+WARN_IF_DOC_ERROR      = YES
+WARN_NO_PARAMDOC       = YES
+
+#---------------------------------------------------------------------------
+# Output
+#---------------------------------------------------------------------------
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+GENERATE_TREEVIEW      = YES
+GENERATE_LATEX         = NO
+HAVE_DOT               = NO
