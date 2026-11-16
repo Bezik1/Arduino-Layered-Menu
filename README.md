@@ -20,6 +20,7 @@ Arduino UNO Rev3 pinout and ATmega328P datasheet are located in `specs/arduino`.
 
 ## Commands
 Board and port are read from `sketch.yaml`. To use different port add `-p <port>` flag.
+
 ```bash
 # Install tools, AVR core and LCD library
 brew install arduino-cli doxygen
@@ -41,6 +42,12 @@ arduino-cli upload -t .
 # Generate documentation
 doxygen
 ```
+
+## Note
+If you are changing the port sometimes there could be situation
+when application sending process will crash due to port invalid
+setting inside .vscode. To avoid this, just change the port inside
+`port` parameter to the one visible in the crash log or Serial Monitor.
 
 ## Documentation
 Code is documented with Doxygen comments. Configuration is stored in `Doxyfile`
